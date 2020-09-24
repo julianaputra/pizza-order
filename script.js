@@ -1,21 +1,28 @@
+// This function will be executed when user
+// loads the website for the first time
 
 function start(){
+    // Disable all options before user selects pizza
     let toppings = document.getElementsByName('topping')
-    for(let i=0; i<toppings.length; i++){
-        toppings[i].disabled=true
-    }
-    let small = document.querySelector('#small')
-    let medium = document.querySelector('#medium')
-    let large = document.querySelector('#large')
+    let sizes = document.getElementsByName('size')
 
-    small.disabled=true
-    medium.disabled=true
-    medium.checked=true
-    large.disabled=true
+    toppings.forEach(topping =>{
+        topping.disabled=true
+    })
+
+    sizes.forEach(size => {
+        size.disabled=true
+    })
+
+    // keep medium size checked as the default size
+    sizes[1].checked=true
 }
 
-
+// This function will be executed when user
+// makes changes to the website
 function count(){
+
+    // Select the required elements
     let pizza1 = document.querySelector('#pizza1')
     let pizza2 = document.querySelector('#pizza2')
     let pizza3 = document.querySelector('#pizza3')
@@ -40,9 +47,11 @@ function count(){
     let ham = toppings[10]
     let sausage = toppings[11]
 
-
+    // Declare the starting price of pizza and topping
     let pizzaPrice = 0
+    let toppingPrice = 0
 
+    // Check selected pizza
     if (pizza1.checked){
         pizzaPrice=8
         disable([lobster,oyster,salmon,bacon,duck,sausage])
@@ -59,19 +68,21 @@ function count(){
         enable([broccoli,onions,zucchini,tuna,bacon,duck,ham,sausage])
     } 
 
+    // After user selects the pizza, activate size option
     small.disabled=false
     medium.disabled=false
     large.disabled=false
 
+    // Check selected size
     if (small.checked){
-        pizzaPrice=pizzaPrice-1
+        pizzaPrice-=1
     } else if(medium.checked){
         pizzaPrice=pizzaPrice
     } else if(large.checked){
-        pizzaPrice=pizzaPrice+2
+        pizzaPrice+=2
     }
 
-    let toppingPrice = 0
+    // Check topping price
     for(let i=0; i<4; i++){
         if(toppings[i].checked==true){
             toppingPrice++
@@ -88,8 +99,7 @@ function count(){
         } 
     }
     
-
-
+    // function to disable topping 
     function disable(toppings){
         toppings.forEach(topping => {
             topping.disabled=true
@@ -97,11 +107,13 @@ function count(){
         });
     }
 
+    // function to enable topping
     function enable(toppings){
         toppings.forEach(topping => {
             topping.disabled=false
         })
     }
 
+    // Display the final price
     getPrice.innerHTML = pizzaPrice+toppingPrice
 }

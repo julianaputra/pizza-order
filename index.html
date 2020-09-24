@@ -1,90 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timedoor Exam</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body onload="start()">
     <div class="container">
-    <form action="" onchange="count()">
-        <h1>Pizza</h1>
-        <div class="pizza-container">
-            <label for="pizza1">
-                <div class="card-menu">
-                    <img src="img/pizza1.png" alt="pizza1">
-                    <h3>PIZZA_NAME1</h3>
-                    <h2>$8</h2>
-                    <input id="pizza1" type="radio" name="menu">
+        <form action="" onchange="count()">
+            <section>
+                <h1>Pizza</h1>
+                <div class="pizza-container">
+                    <label for="pizza1">
+                        <div class="card-menu">
+                            <img src="img/pizza1.png" alt="pizza1" />
+                            <h3>PIZZA_NAME1</h3>
+                            <h2>$8</h2>
+                            <input id="pizza1" type="radio" name="menu" />
+                        </div>
+                    </label>
+                    <label for="pizza2">
+                        <div class="card-menu">
+                            <img src="img/pizza2.png" alt="pizza2" />
+                            <h3>PIZZA_NAME2</h3>
+                            <h2>$10</h2>
+                            <input id="pizza2" type="radio" name="menu" />
+                        </div>
+                    </label>
+                    <label for="pizza3">
+                        <div class="card-menu">
+                            <img src="img/pizza3.png" alt="pizza3" />
+                            <h3>PIZZA_NAME3</h3>
+                            <h2>$12</h2>
+                            <input id="pizza3" type="radio" name="menu" />
+                        </div>
+                    </label>
                 </div>
-            </label>
-            <label for="pizza2">
-                <div class="card-menu">
-                    <img src="img/pizza2.png" alt="pizza2">
-                    <h3>PIZZA_NAME1</h3>
-                    <h2>$10</h2>
-                    <input id="pizza2" type="radio" name="menu">
+            </section>
+
+            <section>
+                <h1>Size</h1>
+                <div class="size-container">
+                    <div class="size-item">
+                        <input type="radio" name="size" id="small" />
+                        <label for="small">Small</label>
+                    </div>
+                    <div class="size-item">
+                        <input type="radio" name="size" id="medium" />
+                        <label for="medium">Medium</label>
+                    </div>
+                    <div class="size-item">
+                        <input type="radio" name="size" id="large" />
+                        <label for="large">Large</label>
+                    </div>
                 </div>
-            </label>
-            <label for="pizza3">
-                <div class="card-menu">
-                    <img src="img/pizza3.png" alt="pizza3">
-                    <h3>PIZZA_NAME1</h3>
-                    <h2>$12</h2>
-                    <input id="pizza3" type="radio" name="menu">
+            </section>
+
+            <section>
+                <h1>Toppings</h1>
+                <div class="topping-container">
+                    <div class="topping-group">
+                        <input name="topping" type="checkbox" id="topping1" value="Avocado" />
+                        <label for="topping1">Avocado</label><br />
+                        <input name="topping" type="checkbox" id="topping2" value="Broccoli" />
+                        <label for="topping2">Broccoli</label><br />
+                        <input name="topping" type="checkbox" id="topping3" value="Onions" />
+                        <label for="topping3">Onions</label><br />
+                        <input name="topping" type="checkbox" id="topping4" value="Zucchini" />
+                        <label for="topping4">Zucchini</label><br />
+                    </div>
+                    <div class="topping-group">
+                        <input name="topping" type="checkbox" id="topping5" value="Lobster" />
+                        <label for="topping5">Lobster</label><br />
+                        <input name="topping" type="checkbox" id="topping6" value="Oyster" />
+                        <label for="topping6">Oyster</label><br />
+                        <input name="topping" type="checkbox" id="topping7" value="Salmon" />
+                        <label for="topping7">Salmon</label><br />
+                        <input name="topping" type="checkbox" id="topping8" value="Tuna" />
+                        <label for="topping8">Tuna</label><br />
+                    </div>
+                    <div class="topping-group">
+                        <input name="topping" type="checkbox" id="topping9" value="Bacon" />
+                        <label for="topping9">Bacon</label><br />
+                        <input name="topping" type="checkbox" id="topping10" value="Duck" />
+                        <label for="topping10">Duck</label><br />
+                        <input name="topping" type="checkbox" id="topping11" value="Ham" />
+                        <label for="topping11">Ham</label><br />
+                        <input name="topping" type="checkbox" id="topping12" value="Sausage" />
+                        <label for="topping12">Sausage</label><br />
+                    </div>
                 </div>
-            </label>
-        </div>
+            </section>
 
-        <h1>Size</h1>
-        <input type="radio" name="size" id="small">
-        <label for="small">Small</label>
-        <input type="radio" name="size" id="medium">
-        <label for="medium">Medium</label>
-        <input type="radio" name="size" id="large">
-        <label for="large">Large</label>
-
-        <h1>Toppings</h1>
-        <div class="topping-container">
-            <div class="topping-group">
-                <input name="topping" type="checkbox" id="topping1" value="Avocado">
-                <label for="topping1">Avocado</label><br>
-                <input name="topping" type="checkbox" id="topping2" value="Broccoli">
-                <label for="topping2">Broccoli</label><br>
-                <input name="topping" type="checkbox" id="topping3" value="Onions">
-                <label for="topping3">Onions</label><br>
-                <input name="topping" type="checkbox" id="topping4" value="Zucchini">
-                <label for="topping4">Zucchini</label><br>
-            </div>
-             <div class="topping-group">
-                <input name="topping" type="checkbox" id="topping5" value="Lobster">    
-                <label for="topping5">Lobster</label><br>
-                <input name="topping" type="checkbox" id="topping6" value="Oyster">
-                <label for="topping6">Oyster</label><br>
-                <input name="topping" type="checkbox" id="topping7" value="Salmon">
-                <label for="topping7">Salmon</label><br>
-                <input name="topping" type="checkbox" id="topping8" value="Tuna">
-                <label for="topping8">Tuna</label><br>    
-             </div>
-             <div class="topping-group">
-                <input name="topping" type="checkbox" id="topping9" value="Bacon">
-                <label for="topping9">Bacon</label><br>
-                <input name="topping" type="checkbox" id="topping10" value="Duck">
-                <label for="topping10">Duck</label><br>
-                <input name="topping" type="checkbox" id="topping11" value="Ham">
-                <label for="topping11">Ham</label><br>
-                <input name="topping" type="checkbox" id="topping12" value="Sausage">
-                <label for="topping12">Sausage</label><br>
-             </div>
-        </div>
-        
-  
-
-        <h1>Price</h1>
-        <span>$</span><span id="price">0</span>
-    </form>
-</div>
+            <section>
+                <h1>Price</h1>
+                <h2 class="price"><span>$</span><span id="price">0</span></h2>
+            </section>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
